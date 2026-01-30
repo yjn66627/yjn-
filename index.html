@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>来自好友的专属祝福</title>
+    <style>
+        body {
+            background-color: #ffeef2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            animation: beat 1s infinite;
+            cursor: pointer;
+        }
+        .heart:before, .heart:after {
+            content: "";
+            position: absolute;
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: #ff5e7e;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        @keyframes beat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.1); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+        .tip {
+            position: absolute;
+            bottom: 20%;
+            color: #ff5e7e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart" onclick="showBlessing()"></div>
+    <div class="tip">点击这颗心，领取今日份好运</div>
+
+    <script>
+        function showBlessing() {
+            // 这里可以设置多重弹窗
+            alert("✨ 叮咚！检测到宇宙无敌美少女一枚！");
+            alert("这是一份来自你杨哥的“强制性”祝福：");
+            alert("祝刘文：眼中有光，兜里有钱，期末不挂，Bug全免！");
+            alert("最重要的是——天天开心，越来越漂亮！🌸");
+            
+            // 弹窗结束后可以跳转或改变页面文字
+            document.body.innerHTML = "<h1 style='color:#ff5e7e; text-align:center;'>愿你所得皆所愿，所行皆坦途！<br>加油，我的好闺蜜！🚀</h1>";
+        }
+    </script>
+</body>
+</html>
